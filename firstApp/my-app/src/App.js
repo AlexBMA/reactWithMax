@@ -38,12 +38,22 @@ class App  extends Component {
     };
 
     render () {
+      // inline style 
+    const style ={
+        backgroudColor :'white',
+        font: 'inherit',
+        border: '1px solid blue',
+        padding: '8px',
+    };  
+
     return (
       <div className="App">
         <h1>Hi I'm a React App </h1>
         <p>This is realy working</p> 
         
-        <button // this way is slower for function calls
+        <button 
+          style ={style}
+          // this way is slower for function calls
           onClick={() => this.switchNameHandler("Alexandru Burghelea")} >Switch Name</button>
         <Person 
           name={this.state.persons[0].name} 
