@@ -50,14 +50,4 @@ class App  extends Component {
 export default App;
 
 
-/*
-state = {
-  persons : [
-    {name: 'Alex',age:26},
-    {name: 'Alexandru',age:29},
-    {name: 'Burghelea Alexandru', age:22}
-  ],
-  otherState: 'some other value'
-};
-*/
 

@@ -49,16 +49,3 @@ const app  = prompt => {
 }
 
 export default app;
-
-
-/*
-state = {
-  persons : [
-    {name: 'Alex',age:26},
-    {name: 'Alexandru',age:29},
-    {name: 'Burghelea Alexandru', age:22}
-  ],
-  otherState: 'some other value'
-};
-*/
-
