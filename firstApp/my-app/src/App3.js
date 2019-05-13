@@ -33,17 +33,11 @@ class App  extends Component {
           {name: event.target.value, age:29},
           {name: 'Burghelea Alexandru', age:22}
         ],
-        otherState: 'some other value',
-        showPersons: false
+        otherState: 'some other value'
       });
     };
 
-    togglePersonHandler = (event) =>{
-        let doesShow = this.state.showPersons;
-        this.setState({
-          showPersons: !doesShow
-        });
-    }
+    
     
 
     render () {
@@ -55,28 +49,6 @@ class App  extends Component {
         padding: '8px',
     };  
 
-    let persons = null;
-
-    if(this.state.showPersons){
-        persons = (
-          <div>
-          <Person 
-            name={this.state.persons[0].name} 
-            age={this.state.persons[0].age}/> 
-          <Person 
-            name={this.state.persons[1].name} 
-            age={this.state.persons[1].age}/> 
-          <Person 
-            name={this.state.persons[2].name} 
-            age={this.state.persons[2].age} 
-            // this way is faster for function calls
-            click={this.switchNameHandler.bind(this, "Alex!")}
-            changed ={this.nameChangeHandler}>
-            My Hobbies: Reading</Person>
-          </div> 
-        );
-    }
-
     return (
       <div className="App">
         <h1>Hi I'm a React App </h1>
@@ -85,8 +57,20 @@ class App  extends Component {
         <button 
           style ={style}
           // this way is slower for function calls
-          onClick={this.togglePersonHandler} >Switch Name</button>
-         {persons}
+          onClick={() => this.switchNameHandler("Alexandru Burghelea")} >Switch Name</button>
+        <Person 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age}/> 
+        <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}/> 
+        <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age} 
+          // this way is faster for function calls
+          click={this.switchNameHandler.bind(this, "Alex!")}
+          changed ={this.nameChangeHandler}>
+          My Hobbies: Reading</Person>
       </div>
       );
     }
