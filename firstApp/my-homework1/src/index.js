@@ -6,5 +6,5 @@ import AppHook from './AppHooks';
 
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<AppHook />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 registerServiceWorker();
