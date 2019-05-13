@@ -38,7 +38,7 @@ class App  extends Component {
     };
 
     render () {
-      // inline style 
+      // inline style with
     const style ={
         backgroudColor :'white',
         font: 'inherit',
