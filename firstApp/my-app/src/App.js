@@ -10,6 +10,7 @@ class App  extends Component {
       {id:'2', name: 'Alexandru',age:29},
       {id:'3', name: 'Burghelea Alexandru', age:22}
     ],
+    showPersons: false,
     otherState: 'some other value'
   };
 
@@ -82,8 +83,8 @@ class App  extends Component {
         <button 
           style ={style}
           // this way is slower for function calls
-          onClick={this.togglePersonHandler} >Switch Name</button>
-         {persons}
+          onClick={this.togglePersonHandler}>Switch Name</button>
+        {persons}
       </div>
       );
     }
