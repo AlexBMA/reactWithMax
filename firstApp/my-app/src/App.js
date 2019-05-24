@@ -70,7 +70,8 @@ class App  extends Component {
             key ={person.id}
             changed={(event)=>this.nameChangeHandler(event,person.id)}
             />
-          })}
+          })
+          }
           </div> 
         );
     }
@@ -88,7 +89,6 @@ class App  extends Component {
       </div>
       );
     }
-    //return React.createElement('div',{className:'App'},React.createElement('h1',null,'Does this work now'),'I\'m a React App!!');
 }
 
 export default App;
