@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Validation from './Validation/Validation.js'
+import Character from './Character/Character.js'
 
 class App extends Component {
 
@@ -8,7 +9,8 @@ class App extends Component {
     text:"",
     length:0,
     showValidation:false,
-    validationText:""
+    validationText:"",
+    showLetterList:false
   };
 
   updateTextParagraph = (event) =>{
@@ -17,13 +19,18 @@ class App extends Component {
     stateCopy.length = stateCopy.text.length;
     if(stateCopy.length>10 || stateCopy.length<5) {
       stateCopy.showValidation = true;
+      stateCopy.showLetterList = true;
       if(stateCopy.length >10) stateCopy.validationText ="too long";
       if(stateCopy.length<5) stateCopy.validationText ="too short";
     }
-      else { 
-        stateCopy.showValidation = false;
-      }
-      this.setState(stateCopy);
+    else { 
+      stateCopy.showValidation = false;
+      stateCopy.showLetterList = false;
+    }
+    
+    
+    this.setState(stateCopy);
+
   }
 
 
@@ -37,12 +44,29 @@ class App extends Component {
       );
     }
 
+    let showLetterList =  null;
+    if(this.state.showLetterList){
+
+     const letters = [...this.state.text]
+
+      showLetterList = (
+        <div>
+        {letters.map((letter,index) => {
+            return <Character letter={letter}/>
+        })
+        } 
+        </div>
+      );
+    }
+
     return(
       <div className="App">
       <h1>Homework 2</h1>
       <input type="text" onChange={this.updateTextParagraph}/>
       <p>Result is here: {this.state.text}</p>
       {showValidationParagraph}
+      <br/>
+      {showLetterList}
     </div>
     );
   }
