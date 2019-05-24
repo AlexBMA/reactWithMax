@@ -28,10 +28,19 @@ class App extends Component {
       stateCopy.showLetterList = false;
     }
     
-    
     this.setState(stateCopy);
-
   }
+
+  deleteLetter =(index)=>{
+      let text = [...this.state.text];
+      console.log(index);
+      text.splice(index,1);
+      console.log(text);
+      let rezult = text.join().replace(/,/g,'');
+      console.log(rezult);
+      this.setState({text:rezult});
+  }
+
 
 
   render(){
@@ -52,7 +61,7 @@ class App extends Component {
       showLetterList = (
         <div>
         {letters.map((letter,index) => {
-            return <Character letter={letter}/>
+            return <Character letter={letter} index={index} click={()=>this.deleteLetter(index)}/>
         })
         } 
         </div>
@@ -62,7 +71,7 @@ class App extends Component {
     return(
       <div className="App">
       <h1>Homework 2</h1>
-      <input type="text" onChange={this.updateTextParagraph}/>
+      <input type="text" onChange={this.updateTextParagraph} value={this.state.text}/>
       <p>Result is here: {this.state.text}</p>
       {showValidationParagraph}
       <br/>

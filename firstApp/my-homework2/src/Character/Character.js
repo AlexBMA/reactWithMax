@@ -9,7 +9,7 @@ const character = (props) =>{
     };  
 
     return (
-        <span style={style}>{props.letter}</span>
+        <span style={style} onClick={props.click}>{props.letter} # {props.index}</span>
     )};
 
 export default character;
