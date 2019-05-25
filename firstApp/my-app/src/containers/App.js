@@ -4,7 +4,7 @@ import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 
 class App  extends Component {
-  
+
   //creation lifecycle component
   constructor(props){
     super(props);

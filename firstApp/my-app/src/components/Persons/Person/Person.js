@@ -15,7 +15,6 @@ class Person extends Component{
              type="text" 
              onChange={this.props.changed}
              value={this.props.name}
-
              />
         </div>
     )};
