@@ -65,9 +65,10 @@ class App extends Component {
       const letters = [...this.state.text]
 
       showLetterList = ( 
-      <div > {
+        <div > 
+        {
           letters.map((letter, index) => {
-            return <Character letter = {letter} index = {index} click = {() => this.deleteLetter(index)}/>
+            return <Character letter = {letter} key = {index} click = {() => this.deleteLetter(index)}/>
           })
         } </div>
       );
