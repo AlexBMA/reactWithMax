@@ -51,10 +51,10 @@ class App  extends Component {
     render () {
       // inline style with
     const style ={
-        backgroudColor :'white',
+        backgroundColor :'green',
         font: 'inherit',
         border: '1px solid blue',
-        padding: '8px',
+        padding: '8px'
     };  
 
     let persons = null;
@@ -74,12 +74,22 @@ class App  extends Component {
           }
           </div> 
         );
+
+        style.backgroundColor ='red'; 
+    }
+
+    const classes = [];
+    if(this.state.persons.length <= 2){
+      classes.push('red'); // classes =['red']
+    }
+    if(this.state.persons.length <= 1){
+      classes.push('bold'); // classes =['red','bold']
     }
 
     return (
       <div className="App">
         <h1>Hi I'm a React App </h1>
-        <p>This is realy working</p> 
+        <p className={classes.join(' ')}>This is realy working</p> 
         
         <button 
           style ={style}
