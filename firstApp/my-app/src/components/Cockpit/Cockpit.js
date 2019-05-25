@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './Cockpit.css'
 
 const cockpit = (props) =>{
+    // using useEffect() in functional components
+    useEffect(() =>{
+        console.log('[Cockpit.js] useEffect');
+        // Http request....
+        setTimeout(()=>{
+            alert('Save data to cloud');
+        }, 1000);
+        return () =>{
+          console.log('[Cockpit.js] cleanup work in useEffect');
+        }
+      }, []);
+
+      useEffect(() =>{
+        console.log('[Cockpit.js] 2nd useEffect');
+        return () =>{
+          console.log('[Cockpit.js] cleanup work in 2nd useEffect');
+        }
+      });
+
+      // useEffect() as many times as needed
 
     const assignedClasses = [];
     let btnClass = '';
@@ -23,7 +43,7 @@ const cockpit = (props) =>{
           // this way is slower for function calls
             onClick={props.clicked}>Switch Name</button>
         </div>
-        );
+    );
 };
         
 
