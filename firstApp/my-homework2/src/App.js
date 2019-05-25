@@ -34,11 +34,8 @@ class App extends Component {
 
   deleteLetter = (index) => {
     let text = [...this.state.text];
-    console.log(index);
     text.splice(index, 1);
-    console.log(text);
-    let rezult = text.join().replace(/,/g, '');
-    console.log(rezult);
+    let rezult = text.join('');
     this.setState({
       text: rezult
     });
