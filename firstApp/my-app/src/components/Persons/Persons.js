@@ -23,7 +23,8 @@ class Persons extends Component{
         return {message: 'Snapshot!'};
     }
 
-    //update lifecycle component
+    //update lifecycle component 
+    // most used
     componentDidUpdate(prevPros,prevState,snapshot){
         console.log('[Persons.js] componentDidUpdate');
         console.log(snapshot);
