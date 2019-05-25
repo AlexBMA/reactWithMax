@@ -4,7 +4,8 @@ import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 
 class App  extends Component {
-    
+  
+  //creation lifecycle component
   constructor(props){
     super(props);
     console.log("[App.js] constructor");
@@ -20,11 +21,13 @@ class App  extends Component {
     };
   }
 
+  //creation lifecycle component
   static getDerivedStateFromProps(props,state){
     console.log('[App.js] get state',props);
     return state;
   }
 
+    //creation lifecycle component
   componentDidMount(){
     console.log('[App.js] componentDidMount');
   }
@@ -58,7 +61,8 @@ class App  extends Component {
           showPersons: !doesShow
         });
     }
-    
+
+    //creation lifecycle component
     render () {
     console.log('[App.js] render');
     let persons = null;
