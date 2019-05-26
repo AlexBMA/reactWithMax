@@ -10,6 +10,7 @@ class Persons extends Component{
     }
 
     //update lifecycle component
+    // optimization of class component
     shouldComponentUpvdate(nextProps, nextState){
         // true if react should be updating
         // false if react should not be updating
