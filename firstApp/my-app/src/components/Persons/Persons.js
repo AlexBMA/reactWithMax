@@ -14,7 +14,11 @@ class Persons extends Component{
         // true if react should be updating
         // false if react should not be updating
         console.log('[Persons.js] shouldComponentUpdate');
-        return true;
+        if(nextProps.persons!==this.persons.persons){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     //update lifecycle component
