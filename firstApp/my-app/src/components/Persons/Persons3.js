@@ -1,18 +1,14 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import Person from './Person/Person'
 
 
-//PureComponent checks for changes to any prop 
-// of the component 
-
-class Persons extends PureComponent{
+class Persons extends Component{
 
     static getDereivedStateFroProps(props, state){
         console.log('[Persons.js] getDerivedStateFromProps');
         return state;
     }
 
-    /*
     //update lifecycle component
     // optimization of class component
     shouldComponentUpvdate(nextProps, nextState){
@@ -25,7 +21,6 @@ class Persons extends PureComponent{
             return false;
         }
     }
-    */
 
     //update lifecycle component
     getSnapshotBeforeUpdate(prevPros, prevState){
