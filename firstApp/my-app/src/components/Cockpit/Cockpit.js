@@ -47,5 +47,6 @@ const cockpit = (props) =>{
 };
         
 
-
+// React.memo functional component 
+// optimization
 export default React.memo(cockpit);
