@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
-import Person from './Person/Person'
-
+import Person from './Person/Person';
 
 //PureComponent checks for changes to any prop 
 // of the component 
