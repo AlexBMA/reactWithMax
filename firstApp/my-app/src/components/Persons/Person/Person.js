@@ -1,4 +1,6 @@
 import React,{Component,Fragment} from 'react';
+import PropTypes from 'prop-types';
+
 import classes from './Person.css';
 import Auxillary from '../../../hoc/Auxillary';
 import withClass from '../../../hoc/WithClass'
@@ -20,5 +22,16 @@ class Person extends Component{
         
     };
 }
+/** Prop type it gives you a warning 
+ *  when you pass wrong argument to 
+ *  class component 
+ *  or functional component
+ */
+Person.prototype = {
+    click: PropTypes.func,
+    name: PropTypes.string,
+    age: PropTypes.number,
+    changed: PropTypes.func    
+};
     
 export default withClass(Person,classes.Person);

@@ -63,6 +63,8 @@ class App  extends Component {
       this.setState({persons:persons});
 
       /*
+      use when you update the state 
+      with values from the previos state
       this.setState((prevState,props)=>{
         return{
           persons: persons,
