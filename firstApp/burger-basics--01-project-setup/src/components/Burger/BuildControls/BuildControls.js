@@ -1,22 +1,21 @@
 import React from 'react';
 import classes from './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
-import {ingredientsConst} from '../BurgerConstant/BurgerConstant';
-
-const controls =[
-    {label:'Salad',type:ingredientsConst.salad},
-    {label:'Bacon',type:ingredientsConst.bacon},
-    {label:'Cheese',type:ingredientsConst.cheese},
-    {label:'Meat',type:ingredientsConst.meat}
-];
+import {INGREDIENT_CONTROLS} from '../BurgerConstant/BurgerConstant';
 
 const buildControls =(props)=>{
 
-    const  controlsMap = controls.map(ctrl=>{
-       return <BuildControl key={ctrl.label} label={ctrl.label}/>
+    const  controlsMap = INGREDIENT_CONTROLS.map(ctrl=>{
+       return <BuildControl key={ctrl.label}
+                            label={ctrl.label}
+                            added={()=>props.ingredientAdded(ctrl.type)}
+                            removed={()=>props.ingredientRemove(ctrl.type)}
+                            disabled ={props.disabled(ctrl.type)}
+       />
     });
 
     return <div className={classes.BuildControls}>
+        <p>Current Price:<strong>{props.price.toFixed(2)}</strong></p>
         {controlsMap}
     </div>
 };
