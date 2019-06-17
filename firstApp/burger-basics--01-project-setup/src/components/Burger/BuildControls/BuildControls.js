@@ -18,7 +18,9 @@ const buildControls =(props)=>{
         <p>Current Price:<strong>{props.price.toFixed(2)}</strong></p>
         {controlsMap}
         <button className={classes.OrderButton}
-        disabled={!props.purchasable}>ORDER NOW</button>
+        disabled={!props.purchasable}
+        onClick={props.ordered}
+        >ORDER NOW</button>
     </div>
 };
 
