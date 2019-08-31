@@ -13,7 +13,6 @@ const buildControls =(props)=>{
                             disabled ={props.disabled(ctrl.type)}
        />
     });
-
     return <div className={classes.BuildControls}>
         <p>Current Price:<strong>{props.price.toFixed(2)}</strong></p>
         {controlsMap}
